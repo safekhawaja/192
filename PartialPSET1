@@ -21,7 +21,9 @@ def all_factors(num):
 
     return(factors)
    
-//all_factors = set()
+"""
+
+all_factors = set()
 
 for counter in range(n):
     if counter % n == 0
@@ -35,11 +37,13 @@ def all_but_last(seq):
 
     return(sequence)
     
-//def alphabet_construct(seq, alphabet):
+    def alphabet_construct(seq, alphabet):
 
     return True if seq in (set of combined strings in list comprehension)
 
-    nested for loop//
+    nested for loop
+    
+    """
     
 def every_other(seq):
 
