@@ -1,7 +1,5 @@
 # Problem Set 3 — Saif Khawaja
 
-import pandas as pd
-
 # Section 1
 
 import numpy as np
