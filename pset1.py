@@ -1,22 +1,16 @@
 # Problem Set 1 — Saif Khawaja
 
 def substrings(seq):
-    sequence = str(seq)
-    substring_list = set()
-
-    for i in range(len(sequence)):
-        for j in range(len(sequence)):
-            substring = sequence[j:len(sequence):i]
-            substring_list.add(substring)
-    return substring_list
+    sequence = set()
+    for i in range(len(seq)):
+        for j in range(i, len(seq) + 1):
+            sequence.add(seq[i:j])
+    return sequence
 
 
 def get_student_avg(student, gradebook_dict):
-    scores = {student: gradebook_dict}
-
-    if student in scores:
-        avgScores[student] = sum(gradebook_dict) / float(len(gradebook_dict))
-        return avgScores
+    if student in gradebook_dict:
+        return sum(gradebook_dict[student]) * 1.0 / len(gradebook_dict[student])
     else:
         return -1
 
@@ -56,25 +50,21 @@ def alphabet_construct(seq, alphabet):
 
 
 def many_any(lst, k):
-    if len([x for x in lst if True]) >= k:
-        return True
-    else:
-        return False
+    return sum(lst) >= k
 
 
 def common_chars(seq, k):
-    lst = []
-    counter = 0
-
-    for element in seq:
-        for character in list(seq):
-            if character == element:
-                counter = counter + 1
-        if counter >= k:
-            lst.extend(element, counter)
-        counter = 0
-    return lst
+    commons = set()
+    for c in seq:
+        count = seq.count(c)
+        if count > k:
+            commons.add((c, count))
+    return commons
 
 
 def dict_to_tuple_list(my_dict):
-    return [(k, v) for k, v in my_dict.items()]
+    result = []
+    for k in my_dict:
+        for v in my_dict[k]:
+            result.append((k, v))
+    return result
